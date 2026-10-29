@@ -1,0 +1,754 @@
+<!-- 사화연 인물 도감 및 운명의 상대 테스트 -->
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-dim": "#0d1518", "primary-fixed-dim": "#acccd5", "error-container": "#93000a", "on-surface": "#dbe4e8", "secondary-container": "#604403", "surface-bright": "#323a3e", "secondary-fixed-dim": "#e9c176", "on-primary": "#15343c", "inverse-primary": "#45636b", "surface-container-lowest": "#070f12", "on-secondary-fixed-variant": "#5d4201", "surface-container-highest": "#2e3639", "on-secondary-container": "#dab36a", "surface-container": "#192124", "secondary": "#e9c176", "primary-container": "#2c4a52", "inverse-on-surface": "#2a3235", "on-background": "#dbe4e8", "secondary-fixed": "#ffdea5", "surface-variant": "#2e3639", "tertiary-fixed": "#ffd9dd", "on-tertiary-container": "#ff94a5", "on-primary-fixed": "#001f26", "outline-variant": "#41484a", "on-tertiary-fixed": "#400013", "on-error-container": "#ffdad6", "outline": "#8b9294", "primary": "#acccd5", "inverse-surface": "#dbe4e8", "surface-tint": "#acccd5", "primary-fixed": "#c8e8f2", "background": "#0d1518", "surface": "#0d1518", "on-surface-variant": "#c1c7ca", "surface-container-low": "#151d20", "on-secondary-fixed": "#261900", "tertiary-container": "#821f38", "tertiary-fixed-dim": "#ffb2bc", "on-tertiary-fixed-variant": "#842039", "on-error": "#690005", "on-primary-fixed-variant": "#2d4b53", "error": "#ffb4ab", "tertiary": "#ffb2bc", "on-secondary": "#412d00", "on-primary-container": "#99b9c2", "on-tertiary": "#650524", "surface-container-high": "#232b2e" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xl": "2rem", "margin": "1rem", "space-xs": "0.25rem", "space-lg": "1.25rem", "gutter": "0.75rem", "space-sm": "0.5rem", "space-md": "0.875rem", "margin-desktop": "2rem", "gutter-desktop": "1.25rem" }, fontFamily: { "headline-sm": ["EB Garamond"], "label-lg": ["Manrope"], "headline-md": ["EB Garamond"], "body-md": ["Manrope"], "label-sm": ["Manrope"], "label-md": ["Manrope"], "body-sm": ["Manrope"], "body-lg": ["Manrope"], "headline-lg": ["EB Garamond"], "display-lg-mobile": ["EB Garamond"], "display-lg": ["EB Garamond"] }, fontSize: { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }], "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500" }] } } } }</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }</style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-secondary-container selection:text-secondary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_4px_24px_rgba(7,15,18,0.7)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-secondary shadow-[0_0_12px_rgba(233,193,118,0.18)]"><span class="material-symbols-outlined text-[20px]">filter_vintage</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-wide text-secondary font-semibold">달빛 아래, 너의 운명</span><span class="text-[9px] font-label-sm text-on-surface-variant/80 tracking-widest uppercase">宮中秘錄</span></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary/70"></span>Destiny Partner Test</span></div></div><div class="flex items-center gap-space-sm"><button id="gallery-toggle-btn" aria-label="Royal Archive Gallery" class="px-3 py-1.5 rounded-full bg-surface-container-high text-secondary hover:bg-surface-container-highest text-[12px] font-label-md flex items-center gap-1 transition-all"><span class="material-symbols-outlined text-[16px]">menu_book</span><span>도감 보기</span></button></div></div></header><main class="flex flex-col relative w-full pt-20 pb-20 bg-surface min-h-screen items-center justify-center"><div class="flex flex-col w-full max-w-lg px-margin pb-space-xl gap-space-lg">
+
+<!-- 1. 시작 화면 (Intro View) -->
+<div id="view-intro" class="flex flex-col gap-space-md w-full animate-fade">
+  <div class="relative w-full rounded-2xl bg-surface-container overflow-hidden shadow-2xl p-space-lg flex flex-col items-center text-center gap-space-md border border-outline-variant/30">
+    <div class="w-20 h-20 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shadow-[0_0_30px_rgba(233,193,118,0.3)] my-2">
+      <span class="material-symbols-outlined text-[48px]">local_florist</span>
+    </div>
+    <div class="flex flex-col gap-1">
+      <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">궁중 연연 성향 테스트</span>
+      <h1 class="font-headline-lg text-[26px] text-secondary font-bold tracking-tight">달빛 아래, 너의 운명</h1>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed px-2">
+      구중궁궐 달빛 연못에 핀 네 송이 꽃 중,<br/>
+      너의 운명과 붉은 실로 연결된 상대는 누구일까?
+    </p>
+
+    <!-- Gender Preference Option -->
+    <div class="w-full flex flex-col gap-2 mt-2">
+      <label class="text-left font-label-md text-secondary text-[12px] px-1">✨ 찾아볼 운명의 상대 유형 선택</label>
+      <div class="grid grid-cols-2 gap-space-xs">
+        <button type="button" onclick="selectGender('male')" id="gender-male" class="gender-btn py-3 px-4 rounded-xl bg-secondary text-on-secondary font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-md">
+          <span>👦 꽃도령 / 선비</span>
+        </button>
+        <button type="button" onclick="selectGender('female')" id="gender-female" class="gender-btn py-3 px-4 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-secondary font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+          <span>👧 꽃낭자 / 아기씨</span>
+        </button>
+      </div>
+    </div>
+
+    <button onclick="startTest()" class="w-full py-4 mt-4 rounded-full bg-gradient-to-r from-secondary to-secondary-fixed text-on-secondary font-bold text-lg shadow-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+      <span>운명의 상대 테스트 시작하기</span>
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+  </div>
+</div>
+
+<!-- 2. 질문 및 선택지 영역 (Quiz View) -->
+<div id="view-quiz" class="hidden flex-col gap-space-md w-full animate-fade">
+  <!-- Progress Bar -->
+  <div class="w-full bg-surface-container-high rounded-full h-3 overflow-hidden p-0.5 shadow-inner">
+    <div id="progress-bar" class="bg-secondary h-full rounded-full transition-all duration-300" style="width: 25%"></div>
+  </div>
+  <div class="flex justify-between items-center text-[12px] font-label-md text-on-surface-variant px-1">
+    <span id="question-number" class="text-secondary font-bold">질문 1 / 4</span>
+    <span>달빛 성향 테스트</span>
+  </div>
+
+  <!-- Question Card -->
+  <div class="relative w-full rounded-2xl bg-surface-container overflow-hidden shadow-xl p-6 flex flex-col gap-4 border border-outline-variant/30 min-h-[160px] justify-center items-center text-center">
+    <span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+    <h2 id="question-text" class="font-headline-md text-lg text-on-surface leading-snug">질문 내용이 여기에 들어갑니다.</h2>
+  </div>
+
+  <!-- Choices -->
+  <div id="choices-container" class="flex flex-col gap-3 w-full mt-2">
+    <!-- JS render -->
+  </div>
+</div>
+
+<!-- 3. 결과 영역 (Result View) -->
+<div id="view-result" class="hidden flex-col gap-space-md w-full animate-fade">
+  <div id="result-card-container" class="w-full">
+    <!-- JS generated result card -->
+  </div>
+
+  <div class="flex flex-col gap-3 w-full mt-2">
+    <button onclick="restartTest()" class="w-full py-4 rounded-full bg-secondary text-on-secondary font-bold text-base shadow-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined">refresh</span>
+      <span>다시 테스트하기</span>
+    </button>
+    <button onclick="toggleGallery()" class="w-full py-3 rounded-full bg-surface-container-high text-on-surface hover:text-secondary font-semibold text-sm transition-all flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined">collections</span>
+      <span>전체 인물 도감 구경하기</span>
+    </button>
+  </div>
+</div>
+
+<!-- 4. 사화연 인물 도감 영역 (Gallery View - Toggleable) -->
+<div id="view-gallery" class="hidden flex-col w-full px-margin pb-space-xl gap-space-lg animate-fade">
+<!-- Royal Archive Proclamation Banner -->
+<div class="relative w-full rounded-xl bg-surface-container overflow-hidden shadow-xl p-space-lg flex flex-col gap-space-sm">
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-secondary/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-28 h-28 rounded-full bg-tertiary/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Palace Royal Archive</span>
+</div>
+<div class="px-space-sm py-0.5 rounded bg-surface-container-high text-secondary-fixed-dim text-[11px] font-label-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+<span>수집률 8 / 8</span>
+</div>
+</div>
+<div class="flex flex-col z-10">
+<h1 class="font-headline-lg text-headline-lg text-secondary tracking-tight">사화연(四花緣) 인물 도감</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+        구중궁궐의 봄바람을 머금은 네 송이 꽃, 그 곁을 지키는 여덟 인연의 비화(祕話)를 펼쳐보세요.
+      </p>
+</div>
+<!-- Micro Stats Shelf -->
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs z-10">
+<div class="bg-surface-container-low rounded-lg p-space-xs flex flex-col items-center justify-center text-center">
+<span class="text-tertiary-fixed text-[11px] font-label-sm font-semibold">모란 (牡丹)</span>
+<span class="text-on-surface text-[10px] font-body-sm opacity-80">2인 · 열정</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-xs flex flex-col items-center justify-center text-center">
+<span class="text-tertiary text-[11px] font-label-sm font-semibold">매화 (梅花)</span>
+<span class="text-on-surface text-[10px] font-body-sm opacity-80">2인 · 설렘</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-xs flex flex-col items-center justify-center text-center">
+<span class="text-primary text-[11px] font-label-sm font-semibold">연꽃 (蓮花)</span>
+<span class="text-on-surface text-[10px] font-body-sm opacity-80">2인 · 신비</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-xs flex flex-col items-center justify-center text-center">
+<span class="text-secondary text-[11px] font-label-sm font-semibold">국화 (菊花)</span>
+<span class="text-on-surface text-[10px] font-body-sm opacity-80">2인 · 단아</span>
+</div>
+</div>
+</div>
+
+<!-- Traditional Floral Category Pills (Filter Tabs) -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 -mx-margin px-margin no-scrollbar" id="filter-container">
+<button class="filter-tab shrink-0 px-space-md py-space-xs rounded bg-secondary text-on-secondary font-label-md text-label-md flex items-center gap-1 shadow-md transition-all" data-filter="all">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span>전체 (8인)</span>
+</button>
+<button class="filter-tab shrink-0 px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1 hover:text-secondary transition-all" data-filter="peony">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim inline-block"></span>
+<span>모란 (열정/기품)</span>
+</button>
+<button class="filter-tab shrink-0 px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1 hover:text-secondary transition-all" data-filter="plum">
+<span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
+<span>매화 (따스함/발랄)</span>
+</button>
+<button class="filter-tab shrink-0 px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1 hover:text-secondary transition-all" data-filter="lotus">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span>연꽃 (지성/신비)</span>
+</button>
+<button class="filter-tab shrink-0 px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1 hover:text-secondary transition-all" data-filter="chrysanthemum">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span>국화 (신뢰/단아)</span>
+</button>
+</div>
+
+<!-- Character Grid: Tactile Heirloom Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-lg w-full" id="character-roster">
+
+<!-- 1. 모란 선비 (Peony Scholar) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="peony">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="모란 선비" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoiLT9M0HJl9raa3hNHA_MkUK6KMVNO7tVYxFix05JjafHtXEqvRdyB1lDMTADMRHcNLcLvgMPtJiAYvOcPC71nMWBEe9eMS-DegayWqkAUg8D8KpWhp_ZrnK4y6JKA2yewfDuwIcptYg6tfpJBkuUMVCVwXgdufrvRPNqT41IlIJjdACRuyjWB7_oUsJcbcms5ZpMkQ98-J56eu4m_UFFNQ0BjbRbdSMfvCcsh04hfb93hc96f7zz"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-secondary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">local_florist</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">UR · 붉은 모란</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm">
+            열정적이고 다정한 리더
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">모란 선비 (이휘)</h2>
+<span class="text-tertiary-fixed text-[11px] font-label-md">친밀도 88%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">부채를 멋지게 펼쳐 든 당당한 선비. 주관이 뚜렷하며 인연을 지키기 위해서라면 대궐 앞에서도 당당히 나섭니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 88%"></div>
+</div>
+<div class="text-[11px] text-secondary font-semibold italic">"내 부채 끝이 가리키는 곳엔 늘 그대가 있소."</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#직진남</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#당당함</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#홍포선비</span>
+</div>
+</div>
+</div>
+
+<!-- 2. 모란 낭자 (왕세자빈) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="peony">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="모란 낭자 (왕세자빈)" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkKb9tze8DjXvCVr2ln8zpPIrljARNmCX1Y1CtvnBafuyDhmZc4Onp8LTEevkGmLlRT4M-G00WoF95sIZOP-SX8Pg7NCk0SPumMJxyS9bXGkgAJssKHtCuyuC6qiPOr4CkObH3FrwR7-8P6yoTunb-DDRp4f3gOCLTX1KMqBDumCZJK4YYkwE2xHj2wwmmqT-gRPWSVFvtmX94qFUqi74HJXgyoCy4bKyroxV3_vHYgZf6iuMs4L7V"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-secondary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">local_florist</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">UR · 붉은 모란</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm">
+            품격 높은 다정한 통솔자
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">모란 낭자 (채원)</h2>
+<span class="text-tertiary-fixed text-[11px] font-label-md">친밀도 94%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">붉은 비단 당의와 기품 있는 자태. 온화한 미소 뒤에 확고한 지혜를 갖추어 궁궐 모두가 정경하는 여장부입니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 94%"></div>
+</div>
+<div class="text-[11px] text-secondary font-semibold italic">"나의 사람을 지키는 일엔 결코 타협이 없답니다."</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#기품걸크러시</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#왕세자빈</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#따뜻한통솔자</span>
+</div>
+</div>
+</div>
+
+<!-- 3. 매화 꽃도령 (Plum Blossom Nobleman) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="plum">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="매화 꽃도령" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFhbgkN1-9miWVR4NuBe_yZYWIiATlGQAcpxYV8rxCxWjJe_BFgDfm4m_it0Cji1spHPCDiyqbHq9t3VuLCUNkjU-pTr18GIrIOA5REElcjMeOFsmfCG1SDWrJ0Z8cQJgRYctak2_nSIAbvd8u7YS2Wd866hHVY1bwizIMAQPpcqx-xOR6IX2v0ymg3Qn2UDeobxQ3dU-KH4GEnAzwBRdvj_DdbPc77CVA1HiQd7z5Qx-AZRmknpOV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-tertiary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">filter_vintage</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">SSR · 분홍 매화</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary-fixed font-label-sm text-label-sm">
+            봄바람 같은 따스함
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">매화 꽃도령 (윤우)</h2>
+<span class="text-tertiary text-[11px] font-label-md">친밀도 75%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">다정하게 손을 내미는 핑크빛 도포의 도령. 서글서글한 보조개 미소와 세심함으로 지친 마음을 어루만져 줍니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-tertiary rounded-full" style="width: 75%"></div>
+</div>
+<div class="text-[11px] text-tertiary font-semibold italic">"봄날 꽃길을 나와 함께 거닐어 주겠소?"</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#다정다감</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#심쿵미소</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#봄날의인연</span>
+</div>
+</div>
+</div>
+
+<!-- 4. 매화 아기씨 (Plum Blossom Maiden) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="plum">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="매화 아기씨" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhtcKWLMmwaReCMtLEnpBSVOKc22ak4iIdeuNM-hCK_E49Wu3UVUip2DAg7VvWKP0HTT0ZqLDVxWM_t0V6aaaW208pWnBwqfYAcxdbdZoO22oZqksDdQ3aUBRkcJW99PO3WLTHVJKdte2yMHULhhj_A4t9hcuDHNzM-39e9mSgDLv2hhgMUzIXrFmFIMqIrNaQJUwmAHWkTGQPlaShp4Rdu5nI6laPzfeYC_qxK5Yn1V10YUXgqG_N"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-tertiary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">filter_vintage</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">SSR · 분홍 매화</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary-fixed font-label-sm text-label-sm">
+            사랑스럽고 발랄한 봄의 전령
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">매화 아기씨 (소율)</h2>
+<span class="text-tertiary text-[11px] font-label-md">친밀도 82%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">매화 가지를 들고 해맑게 웃는 아씨. 솔직하고 발랄한 애교로 어두운 방안을 환하게 밝혀주는 존재입니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-tertiary rounded-full" style="width: 82%"></div>
+</div>
+<div class="text-[11px] text-tertiary font-semibold italic">"헤헤, 당신이 활짝 웃으면 내 마음도 몽글몽글해져요!"</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#비타민에너지</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#사랑스러움</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#애교만점</span>
+</div>
+</div>
+</div>
+
+<!-- 5. 연꽃 학자 (Lotus Scholar) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="lotus">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="연꽃 학자" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGzbBwokTHTN2sPoFDp0voP8PFYsEXtBLH_zHh5EJJNZ9dpCdhs1lIbBPdRgmIAlPcAdXOl5LPs9mPTcw_xHoPpo9K3Um7M1vVejiQ_fHl30xNhnWErxXsh9zaW0HcoFbvqcwf-R9GHpdzvijDNx-zxrDodiPaYcW5uYUXIxoBW_yrheXqJ7AV9YZtZ1eSnrHtIwPTNcZBZnwqMUGFSsPd9jo6llwwlcpBc8uRpzpFEylZlBp0LZaQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-primary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">chevron_left</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">SR · 청아한 연꽃</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+            깊고 신비로운 지성의 정수
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">연꽃 학자 (서진)</h2>
+<span class="text-primary text-[11px] font-label-md">친밀도 68%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">달빛 연못가 서책을 품은 학자. 차분하고 말이 적지만, 눈빛 하나에 누구보다 깊은 진심과 생각을 담고 있습니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-primary rounded-full" style="width: 68%"></div>
+</div>
+<div class="text-[11px] text-primary font-semibold italic">"조용히 그대 곁에서 책장을 넘어가는 소리를 함께 듣고 싶소."</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#뇌섹남</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#신비로움</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#조용한진심</span>
+</div>
+</div>
+</div>
+
+<!-- 6. 연꽃 아가씨 (Lotus Maiden) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="lotus">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="연꽃 아가씨" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG7mL8SiM7J-6w5394_ACkSQCzHjJj2tB89HPAavRQIxMLWJyPgYw4VSwqrzPGfohyCyVRsptIEmKqdESRlo0PYrdDFBbKjV-dQHr1kyky4LhEFKriRm_lvSvq9JKz7p02DAku9xR7Wu3yxBqH-vk7YNkgACLCt1RReiTArtUy3eTlCVr8GvMlwG5Xj0R9ZTovvx98Ky4qKX8yWJzqUEIx0oRzaFjaCos1yeK-BIkEmpl0UU6FCrH0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-primary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">chevron_left</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">SR · 청아한 연꽃</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+            청아하고 맑은 신비의 여인
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">연꽃 아가씨 (서아)</h2>
+<span class="text-primary text-[11px] font-label-md">친밀도 72%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">옥색 치마가 밤바람에 오롯이 날리는 아가씨. 맑고 청아하여 함부로 다가갈 수 없는 범접할 수 없는 품격을 띱니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-primary rounded-full" style="width: 72%"></div>
+</div>
+<div class="text-[11px] text-primary font-semibold italic">"세상의 소란함 속에서도 그대와 함께라면 마음이 평온해집니다."</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#청아함</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#달빛여인</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#은은한향기</span>
+</div>
+</div>
+</div>
+
+<!-- 7. 국화 호위무사 (Chrysanthemum Royal Guard) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="chrysanthemum">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="국화 호위무사" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqY3z_OaP08HObZj7HAbHBAV4-sJItAkAfqlKsSg5feguC-gFAfhKM-exgf2uoJY8lAWX4ucTYc7D7_G0qQx4bWrQ-D5DaHW6DyoljzXz7Vn-nLJnLYzCkpqdqNEY8goC0MjHwNv-Bjn0LwEm1o5ittG_0S2bVJZawtaokskfEvjXOdhDsus76zQpU_am6C0gFmCY9LTMKlttn0j5wUnOFCp_BGd9nGXWFVLGT61htWey0hCo1Lg0-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-secondary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">SSR · 황금 국화</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+            차분하고 흔들림 없는 든든한 신뢰
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">국화 무사 (강현)</h2>
+<span class="text-secondary text-[11px] font-label-md">친밀도 91%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">검을 쥔 호위무사. 말보다는 행동으로, 위험이 닥칠 때 그 어떤 순간에도 가장 먼저 당신 앞을 막아서 주는 든든한 그림자입니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-secondary rounded-full" style="width: 91%"></div>
+</div>
+<div class="text-[11px] text-secondary font-semibold italic">"내 검과 목숨은 오직 그대만을 위해 존재하오."</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#호위무사</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#츤데레</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#절대적인신뢰</span>
+</div>
+</div>
+</div>
+
+<!-- 8. 국화 규수 (Chrysanthemum Gentlewoman) -->
+<div class="character-card flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-lg transition-transform active:scale-[0.99]" data-category="chrysanthemum">
+<div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="국화 규수" class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFI8q_z58z7kP2yVlhXk_D0O6H0mX9pXg9q2E2x4Xz-v98W8X4a1M7O5Q6T8G0-H4M6W0A2Y3B2C1D0E1F2G3H4I5J6K7L8M9N0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+<div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-secondary flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">SSR · 황금 국화</span>
+</div>
+<div class="absolute bottom-space-sm left-space-sm">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+            단아하고 지혜로운 규수
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">국화 규수 (은채)</h2>
+<span class="text-secondary text-[11px] font-label-md">친밀도 85%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">청사초롱을 손에 쥔 단아한 낭자. 변함없는 묵직함으로 당신이 길을 잃지 않도록 밤길을 늘 밝혀주는 지혜로운 휴식처입니다.</p>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden my-1">
+<div class="h-full bg-secondary rounded-full" style="width: 85%"></div>
+</div>
+<div class="text-[11px] text-secondary font-semibold italic">"어두운 밤이어도 걱정 마세요. 제 초롱불이 늘 당신을 비출 테니까요."</div>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#현모양처</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#지혜로움</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-[10px] font-label-sm">#마음의안식처</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></main>
+
+<script>
+// Data Store
+let preferredGender = 'male'; // 'male' or 'female'
+let currentQuestionIndex = 0;
+let scores = { peony: 0, plum: 0, lotus: 0, chrysanthemum: 0 };
+
+// Questions
+const questions = [
+  {
+    text: "주말에 시간이 생겼을 때, 내가 가장 가고 싶은 장소는?",
+    choices: [
+      { text: "사람들이 모여 시끌벅적하고 신나는 축제나 모임 장소", type: "peony" },
+      { text: "햇살이 잘 들고 활기찬 분위기의 귀여운 카페", type: "plum" },
+      { text: "조용히 생각을 정리하거나 책을 읽기 좋은 연못가 한옥 도서관", type: "lotus" },
+      { text: "믿을 수 있는 친구들과 편안하게 보낼 수 있는 우리만의 아지트", type: "chrysanthemum" }
+    ]
+  },
+  {
+    text: "친구에게 속상한 일이 생겼을 때, 내가 가장 먼저 해주는 말은?",
+    choices: [
+      { text: "당당하게 당장 가서 해결해 줄게! 날 믿어!", type: "peony" },
+      { text: "어떡해... 마음 아팠지? 맛있는 것 먹으면서 기분 풀자!", type: "plum" },
+      { text: "원인을 차근차근 들어보고 제일 지혜로운 방법을 찾아보자.", type: "lotus" },
+      { text: "말없이 곁에 있어주며 끝까지 네 편이 되어줄게.", type: "chrysanthemum" }
+    ]
+  },
+  {
+    text: "운명의 상대에게 가장 반하게 되는 커플 모먼트는?",
+    choices: [
+      { text: "나를 리드하며 확실하고 당당하게 마음을 표현해 줄 때", type: "peony" },
+      { text: "봄바람처럼 다정하고 눈맞춤하며 보조개 미소를 지어줄 때", type: "plum" },
+      { text: "조용한 눈빛으로 나를 깊이 이해해주고 통하는 게 많을 때", type: "lotus" },
+      { text: "어떤 상황에서도 든든하게 나를 묵묵히 지켜주고 감싸줄 때", type: "chrysanthemum" }
+    ]
+  },
+  {
+    text: "시험이나 큰 일거리가 다가왔을 때 나의 대처 자세는?",
+    choices: [
+      { text: "솔선수범해서 완벽하게 목표를 세우고 이끌어나간다!", type: "peony" },
+      { text: "즐겁고 해맑은 태도로 친구들과 응원하며 이겨낸다!", type: "plum" },
+      { text: "침착하게 전략을 짜고 차분히 하나씩 실행한다.", type: "lotus" },
+      { text: "흔들리지 않는 책임감으로 꾸준히 자리를 지킨다.", type: "chrysanthemum" }
+    ]
+  }
+];
+
+// Character Database matched to results
+const resultDatabase = {
+  peony: {
+    flower: "붉은 모란 (牡丹)",
+    rarity: "UR · 붉은 모란",
+    male: {
+      name: "모란 선비 (이휘)",
+      desc: "당당한 품격과 열정을 겸비한 왕실 명문가의 직진남",
+      personality: "솔직하고 확신에 찬 성격으로 고민보다 행동이 앞서는 당당한 스타일입니다. 좋아하는 이가 생기면 돌려 말하지 않고 명확하게 마음을 전하며 끝까지 수호합니다.",
+      ideal: "자신의 꿈에 주관이 뚜렷하고 당당하며 내면이 깊은 사람",
+      quote: "“내 부채 끝이 가리키는 곳엔 늘 그대가 있소.”",
+      badge: "열정적이고 다정한 리더",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCoiLT9M0HJl9raa3hNHA_MkUK6KMVNO7tVYxFix05JjafHtXEqvRdyB1lDMTADMRHcNLcLvgMPtJiAYvOcPC71nMWBEe9eMS-DegayWqkAUg8D8KpWhp_ZrnK4y6JKA2yewfDuwIcptYg6tfpJBkuUMVCVwXgdufrvRPNqT41IlIJjdACRuyjWB7_oUsJcbcms5ZpMkQ98-J56eu4m_UFFNQ0BjbRbdSMfvCcsh04hfb93hc96f7zz",
+      tags: ["#직진남", "#당당함", "#홍포선비"]
+    },
+    female: {
+      name: "모란 낭자 (채원)",
+      desc: "화려한 비단 당의 속 기품과 강인함을 간직한 통솔자",
+      personality: "부드러운 미소 속에 강력한 리더십을 지녔습니다. 어려움이 생겨도 포기하지 않고 지혜롭게 헤쳐 나가며, 자신이 아끼는 상대를 철저히 감싸주는 여장부입니다.",
+      ideal: "솔직하면서도 서로를 향한 믿음을 아낌없이 표현해 주는 사람",
+      quote: "“나의 사람을 지키는 일엔 결코 타협이 없답니다.”",
+      badge: "품격 높은 다정한 통솔자",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCkKb9tze8DjXvCVr2ln8zpPIrljARNmCX1Y1CtvnBafuyDhmZc4Onp8LTEevkGmLlRT4M-G00WoF95sIZOP-SX8Pg7NCk0SPumMJxyS9bXGkgAJssKHtCuyuC6qiPOr4CkObH3FrwR7-8P6yoTunb-DDRp4f3gOCLTX1KMqBDumCZJK4YYkwE2xHj2wwmmqT-gRPWSVFvtmX94qFUqi74HJXgyoCy4bKyroxV3_vHYgZf6iuMs4L7V",
+      tags: ["#기품걸크러시", "#왕세자빈", "#따뜻한통솔자"]
+    },
+    advice: "당신처럼 솔직하고 뜨거운 열정을 지닌 사람과 환상의 케미를 자랑합니다. 당당하게 솔직한 마음을 보여주면 운명의 인연이 찾아옵니다."
+  },
+  plum: {
+    flower: "분홍 매화 (梅花)",
+    rarity: "SSR · 분홍 매화",
+    male: {
+      name: "매화 꽃도령 (윤우)",
+      desc: "봄바람처럼 다정하고 서글서글한 미소의 해피 바이러스",
+      personality: "상대방의 작은 행동 변화도 단번에 알아채는 칭찬과 다정함의 달인입니다. 항상 긍정적인 에너지로 주변을 기분 좋게 물들입니다.",
+      ideal: "함께 웃을 수 있고 소소한 일상 속 행복을 같이 기뻐할 수 있는 사람",
+      quote: "“봄날 꽃길을 나와 함께 거닐어 주겠소?”",
+      badge: "봄바람 같은 따스함",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFhbgkN1-9miWVR4NuBe_yZYWIiATlGQAcpxYV8rxCxWjJe_BFgDfm4m_it0Cji1spHPCDiyqbHq9t3VuLCUNkjU-pTr18GIrIOA5REElcjMeOFsmfCG1SDWrJ0Z8cQJgRYctak2_nSIAbvd8u7YS2Wd866hHVY1bwizIMAQPpcqx-xOR6IX2v0ymg3Qn2UDeobxQ3dU-KH4GEnAzwBRdvj_DdbPc77CVA1HiQd7z5Qx-AZRmknpOV",
+      tags: ["#다정다감", "#심쿵미소", "#봄날의인연"]
+    },
+    female: {
+      name: "매화 아기씨 (소율)",
+      desc: "보조개 미소와 밝은 생기로 주위를 환히 밝히는 봄의 아씨",
+      personality: "천진난만하고 사랑스러우며 표현에 가식이 없습니다. 솔직하게 기쁨과 설렘을 나누는 성품 덕분에 주변에 언제나 웃음꽃이 피어납니다.",
+      ideal: "자신의 표현을 해맑게 받아주고 따스하게 감싸주는 사람",
+      quote: "“헤헤, 당신이 활짝 웃으면 내 마음도 몽글몽글해져요!”",
+      badge: "사랑스럽고 발랄한 봄의 전령",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDhtcKWLMmwaReCMtLEnpBSVOKc22ak4iIdeuNM-hCK_E49Wu3UVUip2DAg7VvWKP0HTT0ZqLDVxWM_t0V6aaaW208pWnBwqfYAcxdbdZoO22oZqksDdQ3aUBRkcJW99PO3WLTHVJKdte2yMHULhhj_A4t9hcuDHNzM-39e9mSgDLv2hhgMUzIXrFmFIMqIrNaQJUwmAHWkTGQPlaShp4Rdu5nI6laPzfeYC_qxK5Yn1V10YUXgqG_N",
+      tags: ["#비타민에너지", "#사랑스러움", "#애교만점"]
+    },
+    advice: "봄바람처럼 상쾌하고 밝은 에너지가 상대방의 마음을 녹여줍니다. 작은 안부 인사 하나로 하루를 선물해 보세요."
+  },
+  lotus: {
+    flower: "청아한 연꽃 (蓮花)",
+    rarity: "SR · 청아한 연꽃",
+    male: {
+      name: "연꽃 학자 (서진)",
+      desc: "고요한 달빛 아래 서책을 읽는 지적이고 신비로운 학자",
+      personality: "겉은 조용하고 차분해 보이지만, 관심 있는 분야와 인연에게는 끝없는 애정과 관찰력을 보입니다. 깊은 생각과 배려가 몸에 배어 있습니다.",
+      ideal: "침묵 속에서도 편안함을 느끼며 오붓이 대화를 이어나갈 수 있는 사람",
+      quote: "“조용히 그대 곁에서 책장을 넘어가는 소리를 함께 듣고 싶소.”",
+      badge: "깊고 신비로운 지성의 정수",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAGzbBwokTHTN2sPoFDp0voP8PFYsEXtBLH_zHh5EJJNZ9dpCdhs1lIbBPdRgmIAlPcAdXOl5LPs9mPTcw_xHoPpo9K3Um7M1vVejiQ_fHl30xNhnWErxXsh9zaW0HcoFbvqcwf-R9GHpdzvijDNx-zxrDodiPaYcW5uYUXIxoBW_yrheXqJ7AV9YZtZ1eSnrHtIwPTNcZBZnwqMUGFSsPd9jo6llwwlcpBc8uRpzpFEylZlBp0LZaQ",
+      tags: ["#뇌섹남", "#신비로움", "#조용한진심"]
+    },
+    female: {
+      name: "연꽃 아가씨 (서아)",
+      desc: "옥색 한복 자태가 청초하며 단아한 신비의 여인",
+      personality: "감정을 쉽게 분출하기보다 신중하게 사색합니다. 한 번 맺은 인연을 온 마음으로 귀하게 여기며 깊고 진실한 지조를 이어갑니다.",
+      ideal: "가벼운 장난보다는 진정성 있는 태도로 다가와 주는 사람",
+      quote: "“세상의 소란함 속에서도 그대와 함께라면 마음이 평온해집니다.”",
+      badge: "청아하고 맑은 신비의 여인",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCG7mL8SiM7J-6w5394_ACkSQCzHjJj2tB89HPAavRQIxMLWJyPgYw4VSwqrzPGfohyCyVRsptIEmKqdESRlo0PYrdDFBbKjV-dQHr1kyky4LhEFKriRm_lvSvq9JKz7p02DAku9xR7Wu3yxBqH-vk7YNkgACLCt1RReiTArtUy3eTlCVr8GvMlwG5Xj0R9ZTovvx98Ky4qKX8yWJzqUEIx0oRzaFjaCos1yeK-BIkEmpl0UU6FCrH0",
+      tags: ["#청아함", "#달빛여인", "#은은한향기"]
+    },
+    advice: "쉽게 드러내지 않지만 깊은 생각과 단아한 품격을 이해해줄 상대입니다. 천천히 깊은 대화를 나누며 인연을 쌓아가세요."
+  },
+  chrysanthemum: {
+    flower: "황금 국화 (菊花)",
+    rarity: "SSR · 황금 국화",
+    male: {
+      name: "국화 무사 (강현)",
+      desc: "묵묵히 칼끝으로 운명을 지키는 듬직한 호위무사",
+      personality: "무뚝뚝하고 말이 적지만 내 사람을 지키기 위해서라면 그 어떤 위험도 마다하지 않는 든든한 수호자입니다. 충직하고 한결같습니다.",
+      ideal: "말없이 곁에 있어 주는 것만으로도 마음의 위안을 느끼는 사람",
+      quote: "“내 검과 목숨은 오직 그대만을 위해 존재하오.”",
+      badge: "차분하고 흔들림 없는 든든한 신뢰",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCqY3z_OaP08HObZj7HAbHBAV4-sJItAkAfqlKsSg5feguC-gFAfhKM-exgf2uoJY8lAWX4ucTYc7D7_G0qQx4bWrQ-D5DaHW6DyoljzXz7Vn-nLJnLYzCkpqdqNEY8goC0MjHwNv-Bjn0LwEm1o5ittG_0S2bVJZawtaokskfEvjXOdhDsus76zQpU_am6C0gFmCY9LTMKlttn0j5wUnOFCp_BGd9nGXWFVLGT61htWey0hCo1Lg0-",
+      tags: ["#호위무사", "#츤데레", "#절대적인신뢰"]
+    },
+    female: {
+      name: "국화 규수 (은채)",
+      desc: "청사초롱 불빛 아래 따스함을 선물하는 깊은 지혜의 낭자",
+      personality: "온화하고 흔들리지 않는 중심을 가지고 있으며, 다정하고 친절하게 남을 포용해 줍니다. 든든한 안식처 같은 보듬음을 줍니다.",
+      ideal: "성실하며 자신을 속이지 않는 진실하고 정직한 사람",
+      quote: "“어두운 밤이어도 걱정 마세요. 제 초롱불이 늘 당신을 비출 테니까요.”",
+      badge: "단아하고 지혜로운 규수",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDFI8q_z58z7kP2yVlhXk_D0O6H0mX9pXg9q2E2x4Xz-v98W8X4a1M7O5Q6T8G0-H4M6W0A2Y3B2C1D0E1F2G3H4I5J6K7L8M9N0",
+      tags: ["#현모양처", "#지혜로움", "#마음의안식처"]
+    },
+    advice: "변함없는 묵묵함과 따뜻함으로 서로에게 든든한 등불이 될 궁합입니다. 지키고 싶은 마음을 소중히 간직하세요."
+  }
+};
+
+// Functions
+function selectGender(gender) {
+  preferredGender = gender;
+  const mBtn = document.getElementById('gender-male');
+  const fBtn = document.getElementById('gender-female');
+  
+  if (gender === 'male') {
+    mBtn.className = 'gender-btn py-3 px-4 rounded-xl bg-secondary text-on-secondary font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-md';
+    fBtn.className = 'gender-btn py-3 px-4 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-secondary font-semibold text-sm flex items-center justify-center gap-2 transition-all';
+  } else {
+    fBtn.className = 'gender-btn py-3 px-4 rounded-xl bg-secondary text-on-secondary font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-md';
+    mBtn.className = 'gender-btn py-3 px-4 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-secondary font-semibold text-sm flex items-center justify-center gap-2 transition-all';
+  }
+}
+
+function startTest() {
+  currentQuestionIndex = 0;
+  scores = { peony: 0, plum: 0, lotus: 0, chrysanthemum: 0 };
+  document.getElementById('view-intro').classList.add('hidden');
+  document.getElementById('view-gallery').classList.add('hidden');
+  document.getElementById('view-result').classList.add('hidden');
+  document.getElementById('view-quiz').classList.remove('hidden');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQuestionIndex];
+  document.getElementById('question-number').innerText = `질문 ${currentQuestionIndex + 1} / ${questions.length}`;
+  document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / questions.length) * 100}%`;
+  document.getElementById('question-text').innerText = q.text;
+
+  const choicesContainer = document.getElementById('choices-container');
+  choicesContainer.innerHTML = '';
+
+  q.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = "w-full p-4 rounded-xl bg-surface-container hover:bg-surface-container-high active:scale-[0.98] border border-outline-variant/30 text-left text-on-surface text-sm font-medium transition-all shadow-sm flex items-center gap-3";
+    btn.innerHTML = `
+      <span class="w-6 h-6 rounded-full bg-surface-container-highest text-secondary text-xs flex items-center justify-center shrink-0">❖</span>
+      <span>${choice.text}</span>
+    `;
+    btn.onclick = () => chooseAnswer(choice.type);
+    choicesContainer.appendChild(btn);
+  });
+}
+
+function chooseAnswer(type) {
+  scores[type]++;
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.length) {
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById('view-quiz').classList.add('hidden');
+  document.getElementById('view-result').classList.remove('hidden');
+
+  let maxType = 'peony';
+  let maxScore = -1;
+  for (const [key, val] of Object.entries(scores)) {
+    if (val > maxScore) {
+      maxScore = val;
+      maxType = key;
+    }
+  }
+
+  const resultData = resultDatabase[maxType];
+  const char = preferredGender === 'male' ? resultData.male : resultData.female;
+
+  const resultContainer = document.getElementById('result-card-container');
+  resultContainer.innerHTML = `
+    <div class="character-card flex flex-col bg-surface-container rounded-2xl overflow-hidden shadow-2xl border border-secondary/30">
+      <div class="relative w-full aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+        <img alt="${char.name}" class="w-full h-full object-cover object-top" src="${char.img}"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-black/30"></div>
+        <div class="absolute top-space-sm right-space-sm bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-secondary flex items-center gap-1 shadow-md">
+          <span class="material-symbols-outlined text-[14px]">local_florist</span>
+          <span class="font-label-sm text-label-sm font-semibold tracking-wider">${resultData.rarity}</span>
+        </div>
+        <div class="absolute bottom-space-sm left-space-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-tertiary-container text-on-tertiary-container font-label-sm text-xs font-semibold shadow-md">
+            ${char.badge}
+          </span>
+        </div>
+      </div>
+      <div class="p-5 flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <h2 class="font-headline-lg text-2xl text-secondary font-bold">${char.name}</h2>
+          <span class="text-secondary text-xs bg-secondary/10 px-2.5 py-1 rounded-full font-bold">운명 궁합 99%</span>
+        </div>
+        
+        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">${char.desc}</p>
+        
+        <div class="p-3 bg-surface-container-highest/60 rounded-xl text-center italic text-secondary text-xs font-semibold">
+          ${char.quote}
+        </div>
+
+        <div class="flex flex-col gap-2 mt-1">
+          <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1">
+            <span class="text-secondary text-xs font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">person</span>
+              <span>성품 및 연애 스타일</span>
+            </span>
+            <p class="text-xs text-on-surface-variant leading-relaxed mt-0.5">${char.personality}</p>
+          </div>
+
+          <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1">
+            <span class="text-secondary text-xs font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">favorite</span>
+              <span>이 상대의 이상형 조건</span>
+            </span>
+            <p class="text-xs text-on-surface-variant leading-relaxed mt-0.5">${char.ideal}</p>
+          </div>
+
+          <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1">
+            <span class="text-secondary text-xs font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+              <span>운명의 지침 & 연애 조언</span>
+            </span>
+            <p class="text-xs text-on-surface-variant leading-relaxed mt-0.5">${resultData.advice}</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5 mt-1">
+          ${char.tags.map(tag => `<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant text-[11px] font-label-sm">${tag}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function restartTest() {
+  document.getElementById('view-result').classList.add('hidden');
+  document.getElementById('view-gallery').classList.add('hidden');
+  document.getElementById('view-intro').classList.remove('hidden');
+}
+
+function toggleGallery() {
+  const gallery = document.getElementById('view-gallery');
+  const intro = document.getElementById('view-intro');
+  const quiz = document.getElementById('view-quiz');
+  const result = document.getElementById('view-result');
+
+  if (gallery.classList.contains('hidden')) {
+    intro.classList.add('hidden');
+    quiz.classList.add('hidden');
+    result.classList.add('hidden');
+    gallery.classList.remove('hidden');
+  } else {
+    gallery.classList.add('hidden');
+    intro.classList.remove('hidden');
+  }
+}
+
+document.getElementById('gallery-toggle-btn').addEventListener('click', toggleGallery);
+
+// Filter interaction for Archive Gallery
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => {
+      t.classList.remove('bg-secondary', 'text-on-secondary');
+      t.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+    tab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    tab.classList.add('bg-secondary', 'text-on-secondary');
+
+    const filter = tab.getAttribute('data-filter');
+    document.querySelectorAll('#character-roster .character-card').forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
